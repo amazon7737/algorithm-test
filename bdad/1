@@ -50,3 +50,78 @@ def function():
     
  function()
             
+#3
+# 12345 , 12345
+
+# 21232425 21232425
+
+# 33 11 22 44 55. 33 11 22 44 55
+
+# answers
+
+# return -> solution
+
+a = map(int, input().split())
+
+#answers = 
+# 1~ 5 까지 랜덤으로 숫자가 나오는 함수 * 10000
+
+b = [1, 2, 4, 2, 7, 4]
+b.sort() # 오름차순
+b
+# 랜덤으로 생성하는 answers
+from random import random
+
+# int(random()*5 + 1)
+
+answers = []
+
+for i in range(1, 11):
+    answers.append(int(random()*5+1))
+    
+    
+fir = [1, 2, 3, 4, 5] 
+#*(2000)
+sec = [2, 1, 2, 3, 2, 4, 2, 5] 
+#*(1250)
+thr = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] 
+#*(1000)
+answers = [1, 2, 3, 4, 5]
+
+
+
+
+def function():
+    score = []
+    for i in range(0, 5):
+        if fir[i] == answers[i]:
+            score.append(1)
+
+        if sec[i] == answers[i]:
+            score.append(2)
+            
+        if thr[i] == answers[i]:
+            score.append(3)
+    score2 = []
+    score2.append(sco)
+    return score2
+            
+            
+ # 가장 많은 문제를 맞힌 사람이 누구인지
+
+# 가장 높은 점수를 받은 사람이 여럿일 경우
+    #가장 높은 점수를 받은 사람이 동시에
+        
+# 1번이 다맞을경우
+
+# 2번이 다맞을경우
+
+# 3번이 다맞을경우
+
+# 1번은 다맞았는데 2번이 다틀림 or 3번이 다틀림
+
+# 2번은 다맞았는데 1번이 다틀림 or 3번이 다틀림
+
+# 3번은 다맞았는데 1번이 다틀림 or 2번이 다틀림
+
+# 모든 애들이 2문제씩 맞춤
