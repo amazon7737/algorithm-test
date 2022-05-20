@@ -30,7 +30,19 @@ def a():
         price2 = price2 + (price*n) # price2 -> 3
         n = n+1
     result = price2 - money
-    return result
+    return result    
 b()
 a()
+
+#3
+def function():
+    number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+    eng = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    a_string = input()
+    for i in range(0, 10):
+        a_string = re.sub(eng[i] , number[i], a_string, 1)
+    return a_string
+
+function()
 
