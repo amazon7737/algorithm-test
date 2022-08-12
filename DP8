@@ -1,0 +1,18 @@
+#1912
+
+
+n = int(input())
+a = list(map(int, input().split()))
+dp = [0]*n
+for i in range(n):
+    dp[i] = max(dp[i-1]+a[i], a[i] )
+
+print(max(dp))    
+
+dp 테이블을 정리하도록 반복문을 돌리면
+2가지 경우로 나뉜다
+1. 앞 dp배열 + i번째 배열의 합
+2. 현재 배열의 크기
+중 최댓값이 최대합이된다.
+
+나머지 경우는 배재 해도 상관없다.
