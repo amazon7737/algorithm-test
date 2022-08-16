@@ -1,0 +1,36 @@
+# 저번주 알고리즘 복습
+#11722
+
+n = int(input())
+
+a = list(map(int, input().split()))
+
+dp = [0]*n
+
+for i in range(1, n):
+    for j in range(i):
+        if a[i] < a[j]:
+            dp[i] = max(dp[j] +1, dp[i])
+
+
+#11054
+
+n = int(input())
+
+a = list(map(int, input().split()))
+
+# S_1 < S_2 <...S_k-1 < S_k > S_k+1 > ... S_N-1 > S_N
+
+#오름차순
+for i in range(1, n):
+    for j in range(i):
+        if a[i] > a[j]:
+            dp[i] = max(dp[j] +1, dp[i])
+            
+            
+for i in range(1, n):
+    for j in range(i):
+        if a[i] < a[j]:
+            dp[i] = max(dp[j] +1 , dp[i])
+            
+            
