@@ -204,4 +204,132 @@ def _1759_2():
   dfs(0, [], -1)
 
 
-  
+#2580
+
+def _2580():
+  import sys
+
+  board = [list(map(int, input().split())) for _ in range(9)]
+
+  emptySpace = [(i, j) for i in range(9) for j in range(9) if board[i][j] == 0]
+
+  def candidating(y, x):
+    numbers = [i+1 for i in range(9)]
+
+    for k in range(9):
+      if board[y][k] in numbers:
+        numbers.remove(board[y][k])
+      if board[k][x] in numbers:
+        numbers.remove(board[k][x])
+    y = y//3
+    x = x//3
+
+    for i in range(y*3, (y+1)*3):
+      for j in range(x*3, (x+1)*3):
+        if board[i][j] in numbers:
+          numbers.remove(board[i][j])
+
+    return numbers
+
+  def dfs(count):
+    if count == len(emptySpace):
+      for row in board:
+        print(*row)
+      return
+    (i, j) = emptySpace[count]
+    candi = candidating(i, j)
+
+    for num in candi:
+      board[i][j] = num
+      dfs(count + 1)
+      board[i][j] = 0
+
+
+  dfs(0)
+
+#1987
+
+def _1987():
+  import sys
+
+  input = sys.stdin.readline
+  dy = [1, -1, 0, 0]
+  dx = [0, 0, 1, -1]
+
+  def bt(y, x, cnt):
+    global ans
+
+    visited[ord(board[y][x]) - ord('A')] = True
+
+    for i in range(4):
+      ny = y + dy[i]
+      nx = x + dx[i]
+
+      if 0 <= ny < r and 0 <= nx < c:
+        index = ord(board[ny][nx]) - ord('A')
+        if visited[index] == False:
+          bt(ny, nx, cnt + 1)
+          visited[index] = False
+
+    ans = max(ans,cnt)
+
+  r, c = map(int, input().split()
+  board = [list(input()) for _ in range(r)]
+  visited = [0] * 26
+  ans = 0
+
+  bt(0, 0, 1)
+  print(ans)
+
+#6603
+
+
+#itertool -> combination 사용
+def _6603():
+  import sys
+  from itertools import combinations
+
+  input = sys.stdin.readline
+
+  while True:
+    nums = list(map(int, input().split()))
+    if len(nums) == 1 and nums[0] == 0:
+      break
+
+    length = nums.pop(0)
+
+    for comb in combinations(nums, 6):
+      temp = list(map(str, comb))
+      print(" ".join(temp))
+
+    print()
+
+#DFS / 백트래킹
+
+def _6603_2():
+
+  import sys
+  input = sys.stdin.readline
+
+  def dfs(lotto, nums, visited):
+    if len(lotto) == 6:
+      for i in range(6):
+        print(nums[lotto[i]], end = ' ')
+      print()
+      return
+
+    t_visited = visited[:]
+    for i in range(len(t_visited)):
+      if not t_visited[i]:
+        t_visited[i] = True
+        dfs(lotto + [i], nums, t_visited)
+
+    while True:
+      nums = list(map(int, input().split()))
+      if len(nums) == 1 and nums[0] == 0:
+        break
+      length = nums.pop(0)
+
+      visited = [False] * len(nums)
+      dfs([], nums, visited)
+      print()
