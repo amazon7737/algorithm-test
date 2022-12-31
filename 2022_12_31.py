@@ -35,3 +35,86 @@ def solve():
 solve()
 
 
+
+```python
+#2557
+
+print("Hello World!")
+```
+
+
+```python
+#1000
+
+  1 a, b = map(int, input().split())
+  2
+  3 print(a + b)
+
+
+```
+
+
+```python
+#2558
+
+1 A = int(input())
+3 B = int(input())
+4
+5 print(A + B)
+
+
+```
+
+```python
+#10950
+
+T = int(input())
+for i in range(T):
+  a ,b = map(int, input().split())
+  print(a+b)
+
+
+
+
+```
+
+
+```python
+#10951 ❌
+while True:
+	try:
+		a, b = map(int, input().split())
+		print(a+b)
+	except EOFError:
+		break
+
+
+```
+
+```python
+#10952 ❌
+while True:
+	a, b = map(int , input().split())
+	if a==0 and b==0:
+		break
+	print(a+b)
+
+# if 조건문으로 필터링을 먼저주고 출력 순서를 바꿔야함
+# 순서가 틀려서 틀렸음.
+```
+
+```python
+#10953
+
+T = int(input())
+
+for _ in range(T):
+	a, b = map(int, input().split(','))
+	print(a+b)
+
+# split 의 사용법을 이제야 알게되었다....
+
+
+```
+
+
