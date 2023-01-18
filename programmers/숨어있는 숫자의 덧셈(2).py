@@ -1,4 +1,3 @@
-#프로그래머스 숨어있는 숫자의 덧셈(2)
 
 import re
 def solution(my_string):
