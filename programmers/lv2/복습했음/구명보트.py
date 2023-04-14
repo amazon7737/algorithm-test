@@ -51,3 +51,29 @@ def solution(people, limit) :
             answer += 1
         b -= 1
     return len(people) - answer
+
+
+
+## 다시 풀어보는데
+## 범위 잡는거 조금 아슬아슬하게 틀림 =>sorted 를 안해서 또 뭔가 문제있었음..?
+
+## 한번더 풀어봐야겟다는 생각을 함.
+from collections import deque
+def solution(people, limit):
+    people = deque(sorted(people, reverse = True))
+    boat = 0
+
+    while len(people) > 1:
+        if people[0] + people[-1] <= limit:
+            boat += 1
+            people.pop()
+            people.popleft()
+        else:
+            boat += 1
+            people.popleft()
+    if people:
+        boat += 1
+
+    return boat
+
+
