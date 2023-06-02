@@ -12,3 +12,18 @@ def solution(n):
 	
  #   // 정답은 실제 개수를 1234567로 나눈 나머지 값이므로
     return dp[n-1] % 1234567
+
+
+
+# -------------
+# 2023.06.02 다시 풀어봤는데 깔끔하게 풀림
+
+def solution(n):
+    dp=[]
+    dp.append(1);dp.append(2)
+    for i in range(1, n+1):
+        dp.append(dp[i]+dp[i-1])
+       # print("dp:",dp)
+
+
+    return dp[n-1]%1234567
