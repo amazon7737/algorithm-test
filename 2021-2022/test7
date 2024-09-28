@@ -1,0 +1,66 @@
+#1
+k = list(map(int, input().split())
+
+bridge_length = k[0]
+weight = k[1]
+
+wait = list(map(int, input().split())
+
+bridge = []
+
+# 경과시간 1~2 #
+bridge.append(wait[0])
+sec = sec +1
+
+if (weight - bridge[0])<wait[1]:
+  break
+elif (weight - bridge[0] > wait[1]:
+  bridge.append(wait[1])
+
+sec = sec +1
+
+# 경과시간 3 # 
+sec = sec +1
+
+bridge.append(wait[1])
+
+if (weight -bridge[1]) < wait[2]:
+  break
+elif (weight - bridge[1]) > wait[2]:
+  bridge.append(wait[2])
+  
+#2
+import numpy
+
+n = int(input())
+
+
+x = list(map(int, input().split()))
+
+print(numpy.median(x))
+
+#3
+
+n = int(input())
+
+k = list(map(str, input().split()))
+
+h = 0
+
+if k[0][n] > k[1][n]:
+    h = k[0]
+    k[0] = k[1]
+    k[1] =h
+    print(k)
+if k[1][n] > k[2][n]:
+    h = k[1]
+    k[1] = k[2]
+    k[2] =h
+    print(k)
+if k[0][n] > k[1][n]:
+    h = k[0]
+    k[0] = k[1]
+    k[1] = h
+    print(k)
+    
+## 부족한 점을 알게 되었습니다.. ##
