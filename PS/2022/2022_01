@@ -1,0 +1,113 @@
+#10819
+import sys
+from itertools import permutations
+
+class _10819_1:
+
+  input = sys.stdin.readline
+  N = int(input())
+  A = list(map(int, input().split()))
+
+  cases = list(permutations(A))
+
+  answer = 0
+  for case in cases:
+      mid_sum = 0
+      for i in range(N - 1):
+          mid_sum += abs(case[i] - case[i + 1])
+      answer = max(mid_sum, answer)
+
+  print(answer)
+
+import sys
+
+class _10819_2:
+
+  def dfs(depth):
+      if depth == N:
+          result.append(sum(abs(explore[i] - explore[i + 1]) for i in range(N - 1)))
+          return
+      for i in range(N):
+          if visited[i]:
+              continue
+          explore.append(A[i])
+          visited[i] = 1
+          dfs(depth + 1)
+          visited[i] = 0
+          explore.pop()
+
+  input = sys.stdin.readline
+  N = int(input())
+  A = list(map(int, input().split()))
+
+  visited = [0] * N
+  result, explore = [], []
+  dfs(0)
+  print(max(result))
+
+#10971
+class _10971_2:
+
+  n = int(input())
+  maps = []
+  for _ in range(n):
+      maps.append(list(map(int, input().split())))
+  visited = [0] * n
+  res = 123456789
+
+  add = 0
+
+class _10971:
+
+
+  def DFS(f, add, visited):
+      global res
+      if add > res:
+              return
+      if sum(visited) == N-1:
+          if maps[f][0]:
+              res = min(res, add + maps[f][0])
+          return
+      for i in range(1, N):
+          if maps[f][i] and visited[i] == 0:
+              visited[i] = 1
+              DFS(i, add + maps[f][i], visited)
+              visited[i] = 0
+  for i in range(1, n):
+      if maps[0][i]:
+          visited[i] = 1
+          DFS(i, maps[0][i], visited)
+          visited[i] = 0
+  print(res)
+
+
+#1697
+
+import sys
+from collections import deque
+
+class _1697:
+
+  input = sys.stdin.readline
+
+  def bfs():
+          q = deque()
+          q.append(n)
+          while q:
+              x = q.popleft()
+              if x == k:
+                  print(dist[x)
+                  break
+              for j in (x-1 x+1, x*2):
+                  if 0<= j <= MAX and not dist[j]:
+                      dist[j] = dist[x] + 1
+                      q.append(j)
+
+  MAX = 100000
+  n, k = map(int, input().split())
+  dist = [0] * (MAX + 1)
+  bfs()
+
+import sys
+
+
