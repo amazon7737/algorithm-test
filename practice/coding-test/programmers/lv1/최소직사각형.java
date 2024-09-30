@@ -39,3 +39,44 @@ class Solution {
         return max_left*max_right;
     }
 }
+
+
+/**
+2024-09-30
+**/
+
+import java.util.*;
+
+
+class Solution {
+
+    public int solution(int[][] sizes) {
+
+        int leftNumber = 0;
+        int rightNumber = 0;
+
+        for(int i=0; i< sizes.length;i++){
+
+            if(sizes[i][0] < sizes[i][1]){
+                int temp = sizes[i][0];
+                sizes[i][0] = sizes[i][1];
+                sizes[i][1] = temp;
+            }
+
+        }
+
+        for(int j=0; j< sizes.length;j++){
+            if(leftNumber < sizes[j][0]){
+                leftNumber = sizes[j][0];
+            }
+            if(rightNumber < sizes[j][1]){
+                rightNumber = sizes[j][1];
+            }
+        }
+
+        //System.out.println(Arrays.toString(sizes));
+
+        return leftNumber*rightNumber;
+    }
+
+}
